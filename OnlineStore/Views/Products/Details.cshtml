@@ -1,0 +1,41 @@
+﻿@model OnlineStore.Models.Product
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Category</dt>
+    <dd class="col-sm-9">@Model.Category</dd>
+
+    <dt class="col-sm-3">Description</dt>
+    <dd class="col-sm-9">@Model.Description</dd>
+
+    <dt class="col-sm-3">Price</dt>
+    <dd class="col-sm-9">Rs. @Model.Price.ToString("N0")</dd>
+
+    <dt class="col-sm-3">Availability</dt>
+    <dd class="col-sm-9">
+        @if (Model.StockQuantity > 0)
+        {
+            <span class="badge bg-success">In stock (@Model.StockQuantity available)</span>
+        }
+        else
+        {
+            <span class="badge bg-danger">Out of stock</span>
+        }
+    </dd>
+</dl>
+
+@if (Model.StockQuantity > 0)
+{
+    <form asp-controller="Cart" asp-action="Add" method="post">
+        <input type="hidden" name="productId" value="@Model.Id" />
+        <button type="submit" class="btn btn-success">Add to Cart</button>
+    </form>
+}
+
+<a asp-controller="Products" asp-action="Index" class="btn btn-link mt-2">Back to Products</a>

@@ -1,0 +1,125 @@
+﻿
+/* ===== PREMIUM ONLINE STORE THEME ===== */
+
+:root {
+    --brand: #2563eb;
+    --brand-dark: #1e40af;
+    --bg: #eef4ff;
+    --text: #24344d;
+    --border: #d8e4f5;
+}
+
+/* Overall background */
+body {
+    background: linear-gradient(135deg, #eef4ff, #f5f7ff);
+    color: var(--text);
+}
+
+/* Navbar */
+.custom-navbar {
+    background: linear-gradient(110deg, #dbeafe, #eff6ff);
+    border-bottom: 1px solid #c7dcfa;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.08);
+}
+
+    /* Brand and logo */
+    .custom-navbar .navbar-brand {
+        color: #1e40af !important;
+        font-size: 23px;
+        font-weight: 700;
+    }
+
+.brand-icon {
+    background: #2563eb;
+    color: white;
+    padding: 6px 11px;
+    border-radius: 8px;
+    margin-right: 7px;
+    display: inline-block;
+    transition: background 0.25s ease;
+}
+
+/* No rotation or zoom on logo */
+.navbar-brand:hover .brand-icon {
+    transform: none;
+    background: #1d4ed8;
+}
+
+/* Navigation links */
+.custom-navbar .nav-link {
+    color: #334b70 !important;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+    .custom-navbar .nav-link:hover {
+        color: #2563eb !important;
+    }
+
+/* Main content */
+.main-content {
+    animation: pageFade 0.6s ease-out;
+}
+
+/* Cards */
+.card {
+    background: #ffffff;
+    border: 1px solid #dce7f7;
+    border-radius: 14px;
+    box-shadow: 0 5px 16px rgba(37, 99, 235, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(37, 99, 235, 0.12);
+    }
+
+/* Buttons */
+.btn-primary {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: white;
+    border-radius: 8px;
+}
+
+    .btn-primary:hover {
+        background: #1e40af;
+        border-color: #1e40af;
+        transform: translateY(-2px);
+    }
+
+/* Footer */
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #1e40af;
+    font-size: 18px;
+}
+
+    .footer-brand .brand-icon {
+        margin: 0;
+    }
+
+/* Product image hover */
+.card img {
+    transition: transform 0.35s ease;
+}
+
+.card:hover img {
+    transform: scale(1.035);
+}
+
+/* Simple animation */
+@keyframes pageFade {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
